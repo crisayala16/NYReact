@@ -1,5 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Menu = require('./components/Menu.js');
+var Main = require('./components/Main.js');
 
-ReactDOM.render(<Menu />, document.getElementById("app"));
+ReactDOM.render(<Main />, document.getElementById("app"));

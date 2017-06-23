@@ -1,15 +1,25 @@
 var React = require('react');
-var Child = require('./Child.js');
+var Search = require('./children/Search.js');
+var Results = require('./children/Results.js');
+var Saved = require('./children/Saved.js');
 
-var Menu = React.createClass({
+var Main = React.createClass({
 	render: function(){
 		return(
-			<div className='Menu'>
-				Hello World
-				<Child/>
+			<div className='container'>
+				<div className='jumbotron'>
+					NYT Scrubber
+				</div>
+
+				<Search/>
+
+				<Results/>
+
+				<Saved/>	
 			</div>
+
 		);
 	}
 });
 
-module.exports = Menu;
+module.exports = Main;
