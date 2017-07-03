@@ -1,5 +1,10 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Main = require('./components/Main.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Main from './components/Main.js';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<Main />, document.getElementById("app"));
+ReactDOM.render((
+	<BrowserRouter>
+		<Main />
+	</BrowserRouter>
+	), document.getElementById("app"));

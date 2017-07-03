@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-
+var dateTime = require('get-date');
 var ArticleSchema = new Schema({
 	title: {
 		type: String,
@@ -13,6 +13,10 @@ var ArticleSchema = new Schema({
 	url: {
 		type: String,
 		required: true
+	},
+	dateSaved: {
+		type: String,
+		default: dateTime()
 	},
 	note: [{
 		type: Schema.ObjectId,

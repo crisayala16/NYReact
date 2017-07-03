@@ -1,32 +1,38 @@
-var React = require('react');
+import React from 'react';
+import Save from './resultsChildren/Save.js';
 
-var Results = React.createClass({
-	runMap: function(props){
-		props.map(function(item){
-			return 
-			<li key={item._id} href={item.url} className='result-item'>
-				{item.title}
-			</li>
-		})
-	},
-
-	render: function(){
-		return(
-			<div className='panel panel-primary'>
-				<div className='panel-heading'>
-					<div className='panel-title'>
-						<h3>
-							Results
-						</h3>
-					</div>
-				</div>
-				<div className='panel-body'>
-					<ul className='result-ul'>
-					</ul>
+const Results = (props) => {
+	return(
+		<div className='panel panel-primary'>
+			<div className='panel-heading'>
+				<div className='panel-title'>
+					<p>
+						Results
+					</p>
 				</div>
 			</div>
-		);
-	}
-});
+			<div className='panel-body'>
+			{
+				props.results.map((item) => {
+					return(
+						<div key={item.key} className='well article-well'>
+							<div className='row'>
+								<div className='col-xs-10'>
+									<a target='_blank' href={item.url}>{item.title}</a>
+								</div>
+								<div className='col-xs-2'>
+									<Save 
+									article={item}
+									/>
+								</div>
+							</div>
+						</div>
+					);
+				})
+			}
+			</div>
+		</div>
+	);
+};
 
-module.exports = Results;
+export default Results;
